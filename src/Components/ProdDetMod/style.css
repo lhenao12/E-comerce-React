@@ -1,0 +1,6 @@
+.prodDetailModal{
+   top: 78px;
+   width: 460px;   
+   height: calc(100vh - 190px);
+   overflow-y: auto;
+}
