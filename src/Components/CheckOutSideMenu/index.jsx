@@ -28,6 +28,7 @@ const CheckOutSideMenu = () => {
     context.setOrder([...context.order, orderToAdd]);
     //blanqueamos la orden despues del checkout
     context.setCartProds([]);
+    context.setSearchBy(null);
   };
 
   return (
@@ -80,7 +81,7 @@ const CheckOutSideMenu = () => {
           <span>Precio Total:</span>
           <span>${totalPrice(context.cartProds)}</span>
         </p>
-        <Link to="/my-orders/last">
+        <Link to="/E-comerce-react/my-orders/last">
           <button
             className="bg-black py-3 text-white  w-full rounded-lg "
             onClick={() => handleCheckOut()}

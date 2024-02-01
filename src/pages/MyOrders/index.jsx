@@ -12,9 +12,8 @@ function MyOrders() {
       <div className="flex items-center justify-center relative w-80 mb-4">
         <h1>MyOrders</h1>
       </div>
-      {context.order.map((order, index) => ( 
-       
-        <Link key={index} to={`/my-orders/${index}`}>
+      {context.order.map((order, index) => (
+        <Link key={index} to={`/E-comerce-react/my-orders/${index}`}>
           <OrdersCard
             totalPrice={order.totalPrice}
             totalproducts={order.totalProducts}

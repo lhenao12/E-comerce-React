@@ -6,6 +6,12 @@ export const ShoppingCartProvider = ({ children }) => {
   //estado para enviar sumatoria de productos
   const [count, setCount] = useState(0);
 
+  //Adquirir Cuenta
+  const [account, setAccount] = useState({});
+
+  //Revisar Sign Out
+  const [signOut, setSignOut] = useState(false);
+
   //Modal para abrir y cerrar detalle del producto
   const [openModal, setOpenModal] = useState(false);
   const [detProShowMod, setDetProShowMod] = useState({});
@@ -54,8 +60,9 @@ export const ShoppingCartProvider = ({ children }) => {
   }, [searchBy, item]);
 
   const filteredItemsShop = (item, searchBy) => {
-    return item?.filter((item) => 
-      item.title.toLowerCase().includes(searchBy.toLowerCase()) ||
+    return item?.filter(
+      (item) =>
+        item.title.toLowerCase().includes(searchBy.toLowerCase()) ||
         item.category.toLowerCase().includes(searchBy.toLowerCase())
     );
   };
@@ -94,6 +101,11 @@ export const ShoppingCartProvider = ({ children }) => {
 
         searchBy,
         setSearchBy,
+
+        account,
+        setAccount,
+        signOut,
+        setSignOut,
       }}
     >
       {children}
